@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='loginstyle.css') }}">
+<h1>Login</h1>
+<form method="post">
+  <div class="txt_field">
+    <input type="text" required name="username">
+    <label>Username</label>
+    <span></span>
+  </div>
+  <div class="txt_field">
+    <input type="password" required name="password">
+    <label>Password</label>
+    <span></span>
+  </div>
+  <div class="pass">Forgot Password?</div>
+  <input type="submit" value="Login">
+  <div class="signup_link">Not a member? <a href="{{ url_for('register') }}">Signup</a></div>
+</form>
+{% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <ul class = "message">
+                  {% for message in messages %}
+                      <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+      {% endwith %}
+{% endblock %}

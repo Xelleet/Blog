@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мой блог{% endblock%}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class = "logo">
+                <a href = "{{ url_for('account') }}">My site</a>
+            </div>
+            <ul class = "nav-links">
+                <li><a href = "{{ url_for('home') }}">Главная</a></li>
+                <li><a href = "{{ url_for('about') }}">О нас</a></li>
+                <li><a href = "{{ url_for('services') }}">Услуги</a></li>
+                <li><a href = "{{ url_for('contacts') }}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='registerstyle.css') }}">
+<h1>Register</h1>
+<form method="post">
+  <div class="txt_field">
+    <input type="text" required  name="username">
+    <label>Username</label>
+    <span></span>
+  </div>
+  <div class="txt_field">
+    <input type="email" required name="email" >
+    <label>Email</label>
+    <span></span>
+  </div>
+  <div class="txt_field">
+    <input type="password" required name="password">
+    <label>Password</label>
+    <span></span>
+  </div>
+  <div class="txt_field">
+    <input type="password" required name="confirm_password">
+    <label>Confirm Password</label>
+    <span></span>
+  </div>
+  <input type="submit" value="Register">
+  <div class="signup_link">Already a member? <a href="">Login</a></div>
+</form>
+{% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <ul class = "message">
+                  {% for message in messages %}
+                      <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+      {% endwith %}
+{% endblock %}

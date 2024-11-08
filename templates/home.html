@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='homestyle.css') }}">
+    <h1>Добро пожаловать</h1>
+    <p>Это главная страница</p>
+    <h1>Все статьи</h1>
+    <div class = "article-container">
+    <div class = "articles">
+       {% for article in articles %}
+            <div class = "article-block">
+                <h2><a href="{{url_for('article', article_id=article.id)}}">{{ article.title}}</a></h2>
+                <p>{{ article.content[:100]}}...</p>
+                <p>Автор: {{ article.user_id}}</p>
+            </div>
+            {% else %}
+            <p>Нет статей для отображения</p>
+        {% endfor %}
+    </div>
+    </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const articleBlocks = document.querySelectorAll(".article-block");
+    articleBlocks.forEach((block, index) => {
+        setTimeout(() => {
+            block.classList.add("show");
+        }, index * 100); // Пауза между появлениями карточек
+    });
+});
+</script>
+
+{% endblock %}

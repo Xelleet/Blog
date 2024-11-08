@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Страница теста{% endblock %}
+{% block content %}
+    <h1>Привет, {{username}}!</h1>
+    <h2>Ваши фрукты : </h2>
+    <ul>
+        {% for fruit in fruits %}
+         <li>{{ fruit }}</li>
+        {% endfor %}
+    </ul>
+    <p>Это главная страница</p>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='foundlingstyle.css') }}">
+    <h1>Добро пожаловать</h1>
+    {% if 'account_id' not in session %}
+        <h2>Пожалуйста, войдите в систему, чтобы добавить заметку.</h2>
+        <a href="{{ url_for('login') }}">Войти</a>
+    {% else %}
+        <h1>Добавить заметку</h1>
+        <form method="POST">
+            <label for="title">Заголовок:</label>
+            <input type="text" name="title" id="title" required>
+
+            <label for="content">Содержание:</label>
+            <textarea name="content" id="content" required></textarea>
+
+            <button type="submit">Добавить заметку</button>
+        </form>
+    {% endif %}
+{% endblock %}

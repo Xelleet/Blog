@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/todoliststyle.css">
+</head>
+<body>
+    <h1>Добавить задачу</h1>
+    <form method = "POST">
+        <input type = "text" name = "task" placeholder="Введите задачу" required>
+        <button type = "submit">Добавить</button>
+        <a href = {{ url_for('task_info') }}></a>
+    </form>
+</body>
+</html>

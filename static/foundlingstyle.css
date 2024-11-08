@@ -1,0 +1,73 @@
+/* Основной стиль страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Контейнер для контента */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Ссылка на вход */
+a {
+    color: #3498db;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Стиль формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Поля ввода и текстовая область */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: none;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+/* Кнопка добавления статьи */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}

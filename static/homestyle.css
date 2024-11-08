@@ -1,0 +1,68 @@
+/* Общий стиль страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Контейнер статей */
+.article-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Блок статьи */
+.article-block {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.article-block h2 {
+    font-size: 1.5em;
+    color: #007acc;
+    margin: 0 0 10px 0;
+}
+
+.article-block p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.article-block a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Анимация появления */
+.article-block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Дополнительные стили */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+}
+
+/* Анимация при загрузке */
+.articles {
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
